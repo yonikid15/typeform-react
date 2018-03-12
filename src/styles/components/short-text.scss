@@ -1,0 +1,41 @@
+.st-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid gray;
+    border-image: none;
+    outline: none;
+    flex-basis: 200px;
+    padding-top: 20px;
+    font-size: 24px;
+    line-height: 30px;
+    flex-basis: 370px;
+}
+
+.st-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.lt-textarea {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid gray;
+    border-image: none;
+    outline: none;
+    padding-top: 20px;
+    font-size: 24px;
+    line-height: 30px;
+    flex-basis: 370px;
+    overflow-y: hidden;
+    height: 30px;
+    resize: none;
+    word-wrap: normal;
+}
+
+.lt-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
