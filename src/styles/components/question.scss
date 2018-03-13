@@ -1,17 +1,14 @@
-.question-wrapper {
-    display: flex;
-}
-
 .question {
     font-size: 20px;
     color: #3D3D3D;
     line-height: 140%;
-    padding-left: 30px;
+    padding-left: 50px;
+    align-self: flex-start;
+    // flex-basis: 90%;
+    flex: 20;
 }
 
-.index {
-    line-height: 28px;
-    font-size: 17px;
-    color: #3D3D3D;
-
+.statement .question {
+    padding-left: 10px;
+    flex-basis: 70%;
 }

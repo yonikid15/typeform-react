@@ -7,16 +7,14 @@ const LongText = ( { question, index } ) => {
     }
 
     return (
-        <div>
-            <div className={"question-wrapper"}>
-                <div className={"index"}>
-                    <span>{index}</span>
-                </div>
-                <div className={'question'}>
-                    <span>{question}</span>
-                </div>
+        <div className={"component-wrapper"}>
+            <div className={"item"}>
+                <span>{index}</span>
             </div>
-            <div className={"lt-wrapper"}>
+            <div className={'question'}>
+                <span>{question}</span>
+            </div>
+            <div className={"content"}>
                 <textarea onChange={autoResize} className={"lt-textarea"}></textarea>
             </div>
         </div>

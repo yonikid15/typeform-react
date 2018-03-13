@@ -43,7 +43,9 @@ const bathRangeQuestion = 'How many bathrooms are you looking for?';
 const lowPriceQuestion = 'What is the minimum price you will pay?';
 const highPriceQuestion = 'What is the maximum price you are willing to pay?';
 
-
+const foodQuestion = 'Which meal looks best?';
+const img = '/images/img.jpg';
+const lion = '/images/lion.jpg'
 /*
     All Filters
 */
@@ -66,21 +68,23 @@ export const formPopulation = [
     {
         question: bedRangeQuestion,
         type: 'LONG_TEXT'
+    },
+    {
+        statement: "Your almost there! Just 30 More!",
+        type: 'STATEMENT'
+    },
+    {
+        question: foodQuestion,
+        type: 'PICTURE_CHOICE',
+        images: [
+            {
+                img: lion,
+                name: 'Lion'
+            },
+            {
+                img: img,
+                name: '100'
+            }
+        ]
     }
-    // { 
-    //     question: bedRangeQuestion, 
-    //     handleOnChange: handleBedRange,
-    // },
-    // { 
-    //     question: bathRangeQuestion, 
-    //     handleOnChange: handleBathRange, 
-    // },
-    // { 
-    //     question: lowPriceQuestion, 
-    //     handleOnChange: handleLowerPriceLimit, 
-    // },
-    // { 
-    //     question: highPriceQuestion, 
-    //     handleOnChange: handleUpperPriceLimit, 
-    // }
 ];

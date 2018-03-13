@@ -2,6 +2,8 @@ import React from 'react';
 import MultipleChoice from './MultipleChoice';
 import ShortText from './ShortText';
 import LongText from './LongText';
+import Statement from './Statement';
+import PictureChoice from './PictureChoice';
 
 class TypeForm extends React.Component {
     constructor(props) {
@@ -10,7 +12,7 @@ class TypeForm extends React.Component {
 
     }
 
-    buildQuestion = ({ question, type, options }, index) => {
+    buildQuestion = ({ question, type, options, statement, images }, index) => {
         
         switch( type ) {
             case 'MULTIPLE_CHOICE':
@@ -29,6 +31,17 @@ class TypeForm extends React.Component {
                             index={index} 
                             question={question}
                         />
+            case 'STATEMENT':
+                return <Statement 
+                            index={index} 
+                            statement={statement}
+                        />
+            case 'PICTURE_CHOICE':
+                return <PictureChoice 
+                            index={index}
+                            question={question}
+                            images={images}
+                        />
             default:
                 return undefined;
         };
@@ -37,7 +50,7 @@ class TypeForm extends React.Component {
     render() {
         return (
             <form>
-                <ul className={''}>
+                <ul className={'form-wrapper'}>
                 {
                     this.props.formPopulation === 0 ? 
                         undefined 
@@ -46,14 +59,12 @@ class TypeForm extends React.Component {
                     this.props.formPopulation.map( ( object, i ) => {
                         
                         return  (
-                            <div className={"wrapper"}>
-                                <li 
-                                    key={object.question}
-                                >
-                                    {this.buildQuestion( object, ( i + 1 ) )}
-                                </li>
-                            </div>
-                           
+                            <li 
+                                key={i}
+                                className={"item-wrapper"}
+                            >
+                                {this.buildQuestion( object, ( i + 1 ) )}
+                            </li>
                         )
                     })
                 }
