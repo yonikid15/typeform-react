@@ -10,7 +10,7 @@ const ShortText = ( { question, index } ) => {
                 <span>{question}</span>
             </div>
             <div className={"content"}>
-                <input className={"st-input"} type="text"/>
+                <input className={"textfield"} type="text"/>
             </div>
         </div>
     );

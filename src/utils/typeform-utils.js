@@ -43,9 +43,14 @@ const bathRangeQuestion = 'How many bathrooms are you looking for?';
 const lowPriceQuestion = 'What is the minimum price you will pay?';
 const highPriceQuestion = 'What is the maximum price you are willing to pay?';
 
-const foodQuestion = 'Which meal looks best?';
+const foodQuestion = 'Which picture looks best?';
 const img = '/images/img.jpg';
 const lion = '/images/lion.jpg'
+
+const yesnoQuestion = "Is this a Yes or No question?"
+
+const emailQuestion = "Would you like to notified about all of our latest courses, content, and upgrades? Provide your email and stay in the loop!";
+
 /*
     All Filters
 */
@@ -86,5 +91,13 @@ export const formPopulation = [
                 name: '100'
             }
         ]
+    },
+    {
+        question: yesnoQuestion,
+        type: 'YES_NO'
+    },
+    {
+        question: emailQuestion,
+        type: 'EMAIL'
     }
 ];

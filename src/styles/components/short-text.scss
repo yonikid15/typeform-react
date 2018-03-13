@@ -1,4 +1,4 @@
-.st-input {
+.textfield {
     border-top: none;
     border-left: none;
     border-right: none;
@@ -11,19 +11,9 @@
 }
 
 
-.lt-textarea {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid gray;
-    border-image: none;
-    outline: none;
-    padding-top: 20px;
-    font-size: 24px;
-    line-height: 30px;
+.longtext {
     overflow-y: hidden;
     height: 30px;
     resize: none;
     word-wrap: normal;
-    width: 100%;
 }

@@ -1,24 +1,23 @@
 import React from 'react';
 
-const LongText = ( { question, index } ) => {
-
-    const autoResize = () => {
-        const textarea = document.querySelector(".lt-textarea");
-    }
-
+const Email = ( { question, index } ) => {
     return (
         <div className={"component-wrapper"}>
             <div className={"item"}>
                 <span>{index}</span>
             </div>
-            <div className={'question'}>
+            <div className={"question"}>
                 <span>{question}</span>
             </div>
             <div className={"content"}>
-                <textarea onChange={autoResize} className={"textfield longtext"}></textarea>
+                <input 
+                    placeholder={"Enter email here..."}
+                    className={"textfield"} 
+                    type="email" 
+                />
             </div>
         </div>
     );
 };
 
-export default LongText;
+export default Email;

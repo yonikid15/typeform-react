@@ -1,17 +1,16 @@
 import React from 'react';
+
+// Form Components
 import MultipleChoice from './MultipleChoice';
 import ShortText from './ShortText';
 import LongText from './LongText';
 import Statement from './Statement';
 import PictureChoice from './PictureChoice';
+import YesNo from './YesNo';
+import Email from './Email';
 
 class TypeForm extends React.Component {
-    constructor(props) {
-        super(props);
-
-
-    }
-
+  
     buildQuestion = ({ question, type, options, statement, images }, index) => {
         
         switch( type ) {
@@ -41,6 +40,16 @@ class TypeForm extends React.Component {
                             index={index}
                             question={question}
                             images={images}
+                        />
+            case 'YES_NO':
+                return <YesNo 
+                            index={index} 
+                            question={question}
+                        />
+            case 'EMAIL':
+                return <Email 
+                            index={index} 
+                            question={question} 
                         />
             default:
                 return undefined;

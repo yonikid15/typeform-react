@@ -1,10 +1,14 @@
 import React from 'react';
 
-const Boilerplate = () => {
+const Boilerplate = ( { question, index } ) => {
     return (
-        <div className={"wrapper"}>
-            <div className={"item"}></div>
-            <div className={"question"}></div>
+        <div className={"component-wrapper"}>
+            <div className={"item"}>
+                <span>{index}</span>
+            </div>
+            <div className={"question"}>
+                <span>{question}</span>
+            </div>
             <div className={"content"}></div>
         </div>
     );
