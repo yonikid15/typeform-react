@@ -1,25 +1,18 @@
 import React from 'react';
+import Option from './Option';
 
-const YesNo = ( { index, question } ) => {
+const YesNo = () => {
     return (
-        <div className={"component-wrapper"}>
-            <div className={"item"}>
-                <span>{index}</span>
-            </div>
-            <div className={"question"}>
-                <span>{question}</span>
-            </div>
-            <ul className={"content mc-wrapper"}>
-                <div className={"mc-option"}>
-                    <span>Y</span>
-                    <li>Yes</li>
-                </div>
-                <div className={"mc-option"}>
-                    <span>N</span>
-                    <li>No</li>
-                </div>
-            </ul>
-        </div>
+        <ul className={"content mc-wrapper"}>
+            <Option
+                letter={ 'Y' }
+                name={ 'Yes' }
+            />
+            <Option
+                letter={ 'N' }
+                name={ 'No' }
+            />
+        </ul>
     );
 };
 

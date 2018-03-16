@@ -1,4 +1,10 @@
 import React from 'react';
+import FormWrapper from './FormWrapper';
+import ItemWrapper from './ItemWrapper';
+import ObjectWrapper from './ObjectWrapper';
+import Question from './Question';
+import Index from './Index';
+import Content from './Content';
 
 // Form Components
 import MultipleChoice from './MultipleChoice';
@@ -11,46 +17,24 @@ import Email from './Email';
 
 class TypeForm extends React.Component {
   
-    buildQuestion = ({ question, type, options, statement, images }, index) => {
+    getContent = ({ type, options, statement, images } ) => {
         
         switch( type ) {
             case 'MULTIPLE_CHOICE':
-                return <MultipleChoice 
-                            index={index}
-                            question={question}
-                            options={options}
-                        />
+                return <MultipleChoice options={options} />
             case 'SHORT_TEXT':
-                return <ShortText
-                            index={index}
-                            question={question}
-                        />
+                return <ShortText />
             case 'LONG_TEXT':
-                return <LongText
-                            index={index} 
-                            question={question}
-                        />
+                return <LongText />
             case 'STATEMENT':
-                return <Statement 
-                            index={index} 
-                            statement={statement}
-                        />
+                return undefined;
+                // return <Statement statement={statement} />
             case 'PICTURE_CHOICE':
-                return <PictureChoice 
-                            index={index}
-                            question={question}
-                            images={images}
-                        />
+                return <PictureChoice images={images} />
             case 'YES_NO':
-                return <YesNo 
-                            index={index} 
-                            question={question}
-                        />
+                return <YesNo />
             case 'EMAIL':
-                return <Email 
-                            index={index} 
-                            question={question} 
-                        />
+                return <Email />
             default:
                 return undefined;
         };
@@ -59,7 +43,7 @@ class TypeForm extends React.Component {
     render() {
         return (
             <form>
-                <ul className={'form-wrapper'}>
+                <FormWrapper>
                 {
                     this.props.formPopulation === 0 ? 
                         undefined 
@@ -68,16 +52,19 @@ class TypeForm extends React.Component {
                     this.props.formPopulation.map( ( object, i ) => {
                         
                         return  (
-                            <li 
-                                key={i}
-                                className={"item-wrapper"}
-                            >
-                                {this.buildQuestion( object, ( i + 1 ) )}
-                            </li>
+                            <ItemWrapper key={i}>
+                                <ObjectWrapper>
+                                    <Index index={ ( i + 1 ) } />
+                                    <Question question={ object.question } />
+                                    <Content 
+                                        content={this.getContent( object )}
+                                    />
+                                </ObjectWrapper>
+                            </ItemWrapper>
                         )
                     })
                 }
-                </ul>
+                </FormWrapper>
             </form>
         );
     };

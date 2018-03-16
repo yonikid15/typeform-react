@@ -1,17 +1,9 @@
 import React from 'react';
 
-const ShortText = ( { question, index } ) => {
+const ShortText = () => {
     return (
-        <div className={"component-wrapper"}>
-            <div className={"item"}>
-                <span>{index}</span>
-            </div>
-            <div className={'question'}>
-                <span>{question}</span>
-            </div>
-            <div className={"content"}>
-                <input className={"textfield"} type="text"/>
-            </div>
+        <div className={"content"}>
+            <input className={"textfield"} type="text"/>
         </div>
     );
 };

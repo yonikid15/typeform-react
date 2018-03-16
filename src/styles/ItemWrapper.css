@@ -1,0 +1,8 @@
+.item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+    flex-basis: 100%;
+    /* border: 10px solid goldenrod;
+    justify-content: center; */
+}

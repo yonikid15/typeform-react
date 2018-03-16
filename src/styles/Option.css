@@ -1,0 +1,35 @@
+.mc-option {
+    font-size: 19px;
+    width: 166px;
+    margin-top: 10px;
+    border: black solid 1px;
+    padding: 5px 10px;
+    background-color: rgb(176, 187, 192);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.mc-option:hover {
+    background-color: rgb(96, 125, 139);
+    cursor: pointer;
+}
+
+.mc-option li {
+    padding-left: 10px;
+}
+
+.mc-option span {
+    font-size: 15px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 0 5px;
+    background-color: darkgray;
+}
+
+.mc-option img {
+    width: 100px;
+    height: 100px;
+    flex-basis: 100%;
+}

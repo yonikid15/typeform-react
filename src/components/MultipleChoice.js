@@ -1,33 +1,25 @@
 import React from 'react';
+import Option from './Option';
 
-const MultipleChoice = ( { options, question, index } ) => {
+const MultipleChoice = ( { options } ) => {
 
     const getLetter = (i) => {
         return String.fromCharCode( `${i}`.charCodeAt() + 17 );
     }
 
     return (
-        <div className={"component-wrapper"}>
-            <div className={"item"}>
-                <span>{index}</span>
-            </div>
-            <div className={'question'}>
-                <span>{question}</span>
-            </div>
-            <ul className={"content mc-wrapper"}>
-                {
-                    options.map( ( option, i ) => {
-                        return (
-                            <div className={'mc-option'}>
-                                <span>{getLetter(i)}</span>
-                                <li>{option.name}</li>
-                            </div>
-                        );
-                    })
-                }
-            </ul>
-        </div>
-        
+        <ul className={" mc-wrapper"}>
+            {
+                options.map( ( option, i ) => {
+                    return (
+                        <Option 
+                            letter={ getLetter(i) }
+                            name={ option.name }
+                        />
+                    );
+                })
+            }
+        </ul>
     );
 };
 
