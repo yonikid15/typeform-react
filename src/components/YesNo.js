@@ -3,16 +3,17 @@ import Option from './Option';
 
 const YesNo = () => {
     return (
-        <ul className={"content mc-wrapper"}>
+        <div>
             <Option
                 letter={ 'Y' }
                 name={ 'Yes' }
-            />
+                />
             <Option
                 letter={ 'N' }
                 name={ 'No' }
             />
-        </ul>
+        </div>
+            
     );
 };
 

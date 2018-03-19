@@ -1,8 +1,9 @@
 import React from 'react';
+import '../styles/Index.css';
 
 const Index = ( { index } ) => {
     return (
-        <div className={ "item" }>
+        <div className={ "index" }>
             <span>{ index }</span>
         </div>
     );

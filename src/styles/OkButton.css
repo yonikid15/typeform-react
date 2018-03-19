@@ -1,0 +1,7 @@
+.ok span {
+    margin-right: 10px;
+}
+
+.ok span:last-child {
+    font-size: 25px;
+}

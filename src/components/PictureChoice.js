@@ -8,17 +8,13 @@ const PictureChoice = ( { images } ) => {
     }
 
     return (
-        <ul className={"content"}>
-            {
-                images.map( ( image, i ) => {
-                    return <Image 
-                                image={image.img} 
-                                letter={getLetter(i)}
-                                name={image.name}
-                            />
-                })
-            }
-        </ul>
+        images.map( ( image, i ) => {
+            return <Image 
+                        image={image.img} 
+                        letter={getLetter(i)}
+                        name={image.name}
+                    />
+        })
     );
 };
 

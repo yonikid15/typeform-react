@@ -67,7 +67,7 @@ export const formPopulation = [
         options: transactionType, 
     },
     {
-        question: bedRangeQuestion,
+        question: bathRangeQuestion,
         type: 'SHORT_TEXT'
     },
     {

@@ -2,14 +2,15 @@ import React from 'react';
 
 const LongText = () => {
 
-    const autoResize = () => {
-        const textarea = document.querySelector(".lt-textarea");
+    const autoResize = (e) => {
+        const textarea = document.querySelector(".textarea");
+
+        e.target.style.height = "1px";
+        e.target.style.height = (e.target.scrollHeight)+"px";
     }
 
     return (
-        <div className={"content"}>
-            <textarea onChange={autoResize} className={"textfield longtext"}></textarea>
-        </div>
+        <textarea onChange={autoResize} className={"textfield longtext"}></textarea>
     );
 };
 

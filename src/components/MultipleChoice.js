@@ -8,18 +8,14 @@ const MultipleChoice = ( { options } ) => {
     }
 
     return (
-        <ul className={" mc-wrapper"}>
-            {
-                options.map( ( option, i ) => {
-                    return (
-                        <Option 
-                            letter={ getLetter(i) }
-                            name={ option.name }
-                        />
-                    );
-                })
-            }
-        </ul>
+        options.map( ( option, i ) => {
+            return (
+                <Option 
+                    letter={ getLetter(i) }
+                    name={ option.name }
+                />
+            );
+        })  
     );
 };
 

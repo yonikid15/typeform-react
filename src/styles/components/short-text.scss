@@ -4,9 +4,7 @@
     border-right: none;
     border-bottom: 1px solid gray;
     outline: none;
-    padding-top: 20px;
     font-size: 24px;
-    line-height: 30px;
     width: 100%;
 }
 
@@ -15,5 +13,5 @@
     overflow-y: hidden;
     height: 30px;
     resize: none;
-    word-wrap: normal;
+    word-wrap: break-word;
 }

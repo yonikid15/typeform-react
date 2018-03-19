@@ -40,9 +40,13 @@ class TypeForm extends React.Component {
         };
     };
 
+    onSubmit = (e) => {
+        e.preventDefault();
+    }
+
     render() {
         return (
-            <form>
+            <form onSubmit={this.onSubmit}>
                 <FormWrapper>
                 {
                     this.props.formPopulation === 0 ? 
@@ -52,15 +56,13 @@ class TypeForm extends React.Component {
                     this.props.formPopulation.map( ( object, i ) => {
                         
                         return  (
-                            <ItemWrapper key={i}>
-                                <ObjectWrapper>
-                                    <Index index={ ( i + 1 ) } />
-                                    <Question question={ object.question } />
-                                    <Content 
-                                        content={this.getContent( object )}
-                                    />
-                                </ObjectWrapper>
-                            </ItemWrapper>
+                            <ObjectWrapper>
+                                <Index index={ ( i + 1 ) } />
+                                <Question question={ object.question } />
+                                <Content 
+                                    content={this.getContent( object )}
+                                />
+                            </ObjectWrapper>
                         )
                     })
                 }
