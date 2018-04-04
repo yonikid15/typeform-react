@@ -1,7 +1,19 @@
-.ok span {
+.ok-wrapper {
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ok-btn span {
     margin-right: 10px;
 }
 
-.ok span:last-child {
+.ok-btn span:last-child {
     font-size: 25px;
+}
+
+.ok-alt {
+    color: rgb(77, 118, 134);
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 15px;
 }

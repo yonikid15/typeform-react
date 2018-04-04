@@ -3,10 +3,9 @@
     font-size: 19px;
     width: 166px;
     margin-top: 10px;
-    border: black solid 1px;
+    border: rgb(77, 118, 134) solid 1px;
     padding: 5px 10px;
     background-color: rgb(245, 251, 253);
-    border-color: rgb(77, 118, 134);
     border-radius: 4px;
     display: flex;
     align-items: center;

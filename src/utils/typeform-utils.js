@@ -55,49 +55,80 @@ const emailQuestion = "Would you like to notified about all of our latest course
     All Filters
 */
 
-export const formPopulation = [
-    { 
+// responses: {
+//     propertyType: 
+// }
+// const questions = {
+//     'propertyType': {
+//         type: 'MULTIPLE_CHOICE',
+//         logic: function(selection) {
+//             if (selection === true) {
+//                 ask('propertyType')
+//             }
+//         }
+//     }
+// }
+
+export const formPopulation = {
+    'propertyType': {
         question: propertyTypeQuestion,
         type: 'MULTIPLE_CHOICE',
-        options: propertyType, 
+        options: propertyType,
     },
-    { 
-        question: transactionTypeQuestion,
-        type: 'MULTIPLE_CHOICE',
-        options: transactionType, 
-    },
-    {
+    'numOfBathrooms': {
         question: bathRangeQuestion,
-        type: 'SHORT_TEXT'
-    },
-    {
-        question: bedRangeQuestion,
         type: 'LONG_TEXT'
     },
-    {
-        statement: "Your almost there! Just 30 More!",
-        type: 'STATEMENT'
-    },
-    {
-        question: foodQuestion,
-        type: 'PICTURE_CHOICE',
-        images: [
-            {
-                img: lion,
-                name: 'Lion'
-            },
-            {
-                img: img,
-                name: '100'
-            }
-        ]
-    },
-    {
+    'yesNo': {
         question: yesnoQuestion,
         type: 'YES_NO'
-    },
-    {
-        question: emailQuestion,
-        type: 'EMAIL'
     }
-];
+};
+
+
+// export const formPopulation = [
+//     { 
+//         question: propertyTypeQuestion,
+//         type: 'MULTIPLE_CHOICE',
+//         options: propertyType, 
+//     },
+//     { 
+//         question: transactionTypeQuestion,
+//         type: 'MULTIPLE_CHOICE',
+//         options: transactionType, 
+//     },
+//     {
+//         question: bathRangeQuestion,
+//         type: 'SHORT_TEXT'
+//     },
+//     {
+//         question: bedRangeQuestion,
+//         type: 'LONG_TEXT'
+//     },
+//     {
+//         statement: "Your almost there! Just 30 More!",
+//         type: 'STATEMENT'
+//     },
+//     {
+//         question: foodQuestion,
+//         type: 'PICTURE_CHOICE',
+//         images: [
+//             {
+//                 img: lion,
+//                 name: 'Lion'
+//             },
+//             {
+//                 img: img,
+//                 name: '100'
+//             }
+//         ]
+//     },
+//     {
+//         question: yesnoQuestion,
+//         type: 'YES_NO'
+//     },
+//     {
+//         question: emailQuestion,
+//         type: 'EMAIL'
+//     }
+// ];

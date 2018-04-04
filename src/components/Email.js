@@ -1,5 +1,6 @@
 import React from 'react';
 import OkButton from './OkButton';
+import TextField from './TextField';
 
 class Email extends React.Component {
     constructor(props) {
@@ -23,12 +24,13 @@ class Email extends React.Component {
     render() {
         return (
             <div>
-                <input
-                    onChange={this.handleConfirmButton}
-                    placeholder={"Enter email here..."}
-                    className={"textfield"} 
-                    type="email" 
-                />
+                <TextField>
+                    <input
+                        onChange={this.handleConfirmButton}
+                        placeholder={"Enter email here..."}
+                        type="email" 
+                    />
+                </TextField>
                 { this.state.confirm && <OkButton /> }
             </div>
         );

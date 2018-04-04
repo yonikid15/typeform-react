@@ -5,6 +5,8 @@ import ObjectWrapper from './ObjectWrapper';
 import Question from './Question';
 import Index from './Index';
 import Content from './Content';
+import Driver from 'driver.js';
+import '../../node_modules/driver.js/dist/driver.min.css';
 
 // Form Components
 import MultipleChoice from './MultipleChoice';
@@ -16,6 +18,11 @@ import YesNo from './YesNo';
 import Email from './Email';
 
 class TypeForm extends React.Component {
+
+    componentDidMount () {
+        const driver = new Driver();
+        driver.highlight('#numOfBathrooms');
+    }
   
     getContent = ({ type, options, statement, images } ) => {
         
@@ -45,22 +52,26 @@ class TypeForm extends React.Component {
     }
 
     render() {
+
+        const { formPopulation } = this.props;
+        
         return (
             <form onSubmit={this.onSubmit}>
                 <FormWrapper>
                 {
-                    this.props.formPopulation === 0 ? 
+                    formPopulation === 0 ? 
                         undefined 
                     :
 
-                    this.props.formPopulation.map( ( object, i ) => {
-                        
+                    Object.keys(formPopulation).map( ( key, i ) => {
                         return  (
-                            <ObjectWrapper>
+                            <ObjectWrapper id={`${key}`}>
                                 <Index index={ ( i + 1 ) } />
-                                <Question question={ object.question } />
+                                <Question 
+                                    question={ formPopulation[key].question } 
+                                />
                                 <Content 
-                                    content={this.getContent( object )}
+                                    content={this.getContent( formPopulation[key] )}
                                 />
                             </ObjectWrapper>
                         )

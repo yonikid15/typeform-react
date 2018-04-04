@@ -1,0 +1,6 @@
+.longtext {
+    overflow-y: hidden;
+    height: 30px;
+    resize: none;
+    word-wrap: break-word;
+}

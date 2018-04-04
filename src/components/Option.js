@@ -1,9 +1,18 @@
 import React from 'react';
 import '../styles/Option.css';
 
-const Option = ( { name, letter } ) => {
+const Option = ( { value, name, letter } ) => {
+
+    const setValue = () => {
+        if( value ) { 
+            console.log( value );
+        } else {
+            console.log( name );
+        }
+    }
+
     return (
-        <div className={ 'mc-option' }>
+        <div onClick={setValue} className={ 'mc-option' }>
             <span>{ letter }</span>
             <li>{ name }</li>
         </div>

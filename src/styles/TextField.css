@@ -1,0 +1,15 @@
+.textfield > * {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(77, 118, 134);
+    outline: none;
+    font-size: 24px;
+    width: 100%;
+    color: rgb(77, 118, 134);
+}
+
+.textfield > *::placeholder {
+    color: rgb(77, 118, 134);
+    opacity: 1;
+}

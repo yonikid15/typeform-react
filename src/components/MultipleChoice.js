@@ -11,6 +11,7 @@ const MultipleChoice = ( { options } ) => {
         options.map( ( option, i ) => {
             return (
                 <Option 
+                    value={ option.value }
                     letter={ getLetter(i) }
                     name={ option.name }
                 />

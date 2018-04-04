@@ -2,9 +2,9 @@ import React from 'react';
 import Wrapper from './Wrapper';
 import '../styles/ObjectWrapper.css';
 
-const ObjectWrapper = ( { children } ) => {
+const ObjectWrapper = ( { id, children } ) => {
     return (
-        <Wrapper className={"object-wrapper"}>
+        <Wrapper id={`${id}`} className={`object-wrapper`}>
             { children }
         </Wrapper>
     );

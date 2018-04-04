@@ -7,6 +7,17 @@ A recreation of Typeform using React. Typeform is a "one question at a time" bas
 ## Components
 
 - TypeForm
+    - Props:
+        - formPopulation (object) : This is the main prop that the developer must input all form objects that will appear in the Typeform component. The object will contain objects with the key acting as the Id of each question.
+
+            - Structure:
+                const formPopulation = {
+                    'objectId': {
+                        type: 'TYPE_OF_QUESTION',
+                        options: { /* depends on type of questions */ }
+                    }
+                }
+
 
 - Multiple Choice
     - Props:
@@ -16,3 +27,6 @@ A recreation of Typeform using React. Typeform is a "one question at a time" bas
 - Short Text
     - Props:
         - 
+
+
+
