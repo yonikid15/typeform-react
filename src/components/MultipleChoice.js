@@ -1,7 +1,7 @@
 import React from 'react';
 import Option from './Option';
 
-const MultipleChoice = ( { options } ) => {
+const MultipleChoice = ( { options, handleNextStep } ) => {
 
     const getLetter = (i) => {
         return String.fromCharCode( `${i}`.charCodeAt() + 17 );
@@ -14,6 +14,7 @@ const MultipleChoice = ( { options } ) => {
                     value={ option.value }
                     letter={ getLetter(i) }
                     name={ option.name }
+                    handleNextStep={handleNextStep}
                 />
             );
         })  

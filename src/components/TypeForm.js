@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { startDriver, handleNextStep, createStepDefinition, defineDriverSteps} from '../driver/driver';
+import { nextQuestion, highlightNext } from '../actions/typeform';
+
 import FormWrapper from './FormWrapper';
 import ItemWrapper from './ItemWrapper';
 import ObjectWrapper from './ObjectWrapper';
 import Question from './Question';
 import Index from './Index';
 import Content from './Content';
-import Driver from 'driver.js';
 import '../../node_modules/driver.js/dist/driver.min.css';
 
 // Form Components
@@ -17,13 +20,14 @@ import PictureChoice from './PictureChoice';
 import YesNo from './YesNo';
 import Email from './Email';
 
-class TypeForm extends React.Component {
+export class TypeForm extends React.Component {
 
     componentDidMount () {
-        const driver = new Driver();
-        driver.highlight('#numOfBathrooms');
+        const steps = createStepDefinition( this.props.formPopulation );
+        defineDriverSteps( steps );
+        startDriver();
     }
-  
+
     getContent = ({ type, options, statement, images } ) => {
         
         switch( type ) {
@@ -54,6 +58,7 @@ class TypeForm extends React.Component {
     render() {
 
         const { formPopulation } = this.props;
+
         
         return (
             <form onSubmit={this.onSubmit}>
@@ -72,6 +77,7 @@ class TypeForm extends React.Component {
                                 />
                                 <Content 
                                     content={this.getContent( formPopulation[key] )}
+                                    handleNextStep={handleNextStep}
                                 />
                             </ObjectWrapper>
                         )
@@ -83,4 +89,12 @@ class TypeForm extends React.Component {
     };
 };
 
-export default TypeForm;
+const mapStateToProps = (state) => ({
+    currentQuestion: state.typeform.currentQuestion
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    highlightNext: ( driver, currentQuestion ) => dispatch( highlightNext( driver, currentQuestion ))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TypeForm);

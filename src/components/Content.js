@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Content.css';
 
-const Content = ( { content } ) => {
+const Content = ( { content, handleNextStep, handlePreviousStep } ) => {
     return (
         <div className={ "content" }>
-            <span>{ content }</span>
+            {React.cloneElement( content, { handleNextStep: handleNextStep } )}
         </div>
     );
 };
